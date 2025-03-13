@@ -7,7 +7,7 @@ const modelSelect = document.getElementById("model-select");
 const countSelect = document.getElementById("count-select");
 const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
-const API_KEY = ""; // Hugging Face API key
+const API_KEY = ""; // Hugging Face API key DELETE WHEN ADDING/COMMITING/PUSHING TO GITHUB
 
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
@@ -31,7 +31,6 @@ const examplePrompts = [
 (() => {
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
     const isDarkTheme = savedTheme === "dark" || (!savedTheme && systemPrefersDark);
     document.body.classList.toggle("dark-theme", isDarkTheme);
     themeToggle.querySelector("i").className = isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon";
@@ -48,14 +47,11 @@ const toggleTheme = () => {
 const getImageDimensions = (aspectRatio, baseSize = 512) => {
     const [width, height] = aspectRatio.split("/").map(Number);
     const scaleFactor = baseSize / Math.sqrt(width * height);
-
     let calculatedWidth = Math.round(width * scaleFactor);
     let calculatedHeight = Math.round(height * scaleFactor);
-
     // Ensure dimensions are multiples of 16 (AI model requirements)
     calculatedWidth = Math.floor(calculatedWidth / 16) * 16;
     calculatedHeight = Math.floor(calculatedHeight / 16) * 16;
-
     return { width: calculatedWidth, height: calculatedHeight };
 };
 
@@ -63,7 +59,6 @@ const getImageDimensions = (aspectRatio, baseSize = 512) => {
 const updateImageCard = (imgIndex, imgUrl) => {
     const imgCard = document.getElementById(`img-card-${imgIndex}`);
     if (!imgCard) return;
-
     imgCard.classList.remove("loading");
     imgCard.innerHTML = `<img src="${imgUrl}" class="result-img" />
               <div class="img-overlay">
@@ -78,7 +73,6 @@ const generateImages = async (selectedModel, imageCount, aspectRatio, promptText
     const MODEL_URL = `https://api-inference.huggingface.co/models/${selectedModel}`;
     const { width, height } = getImageDimensions(aspectRatio);
     generateBtn.setAttribute("disabled", "true");
-
     // Create an array of image generation promises
     const imagePromises = Array.from({ length: imageCount }, async(_, i) => {
         // Sent request to the AI model API
@@ -95,9 +89,7 @@ const generateImages = async (selectedModel, imageCount, aspectRatio, promptText
                     options: { wait_for_model: true, user_cache: false },
                 }),
             });
-
             if (!response.ok) throw new Error((await response.json())?.error);
-    
             // Convert response to an image URL and update the image card
             const result = await response.blob();
             updateImageCard(i, URL.createObjectURL(result));
@@ -108,7 +100,6 @@ const generateImages = async (selectedModel, imageCount, aspectRatio, promptText
             imgCard.querySelector(".status-text").textContent = "Generation failed! Check console for more details.";
         }
     });
-
     await Promise.allSettled(imagePromises);
     generateBtn.removeAttribute("disabled");
 };
@@ -116,7 +107,6 @@ const generateImages = async (selectedModel, imageCount, aspectRatio, promptText
 // Create placeholder cards with loading spinners
 const createImageCards = (selectedModel, imageCount, aspectRatio, promptText) => {
     gridGallery.innerHTML = "";
-
     for (let i = 0; i < imageCount; i++) {
         gridGallery.innerHTML += `<div class="img-card loading" id="img-card-${i}" style="aspect-ratio: ${aspectRatio}">
               <div class="status-container">
@@ -126,20 +116,17 @@ const createImageCards = (selectedModel, imageCount, aspectRatio, promptText) =>
               </div>
             </div>`;
     }
-
     generateImages(selectedModel, imageCount, aspectRatio, promptText);
 };
 
 // Handle form submission
 const handleFormSubmit = (e) => {
     e.preventDefault();
-
     // Get form values
     const selectedModel = modelSelect.value;
     const imageCount = parseInt(countSelect.value) || 1;
     const aspectRatio =  ratioSelect.value || "1/1";
     const promptText = promptInput.value.trim();
-
     createImageCards(selectedModel, imageCount, aspectRatio, promptText);
 };
 
