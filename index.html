@@ -22,6 +22,7 @@
           </div>
           <h1>AI Image Generator</h1>
         </div>
+        <!-- Light/Dark theme button -->
         <button class="theme-toggle">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -29,7 +30,7 @@
 
       <div class="main-content">
         <form action="#" class="prompt-form">
-          <!-- Prompt Container -->
+          <!-- Input box -->
           <div class="prompt-container">
             <textarea
               class="prompt-input"
@@ -37,12 +38,13 @@
               required
               autofocus
             ></textarea>
+            <!-- Random prompt button -->
             <button type="button" class="prompt-btn">
               <i class="fa-solid fa-dice"></i>
             </button>
           </div>
 
-          <!-- Prompt Actions/Buttons -->
+          <!-- AI API choice -->
           <div class="prompt-actions">
             <div class="select-wrapper">
               <select class="custom-select" id="model-select" required>
@@ -61,6 +63,7 @@
               </select>
             </div>
 
+            <!-- Image count choice -->
             <div class="select-wrapper">
               <select class="custom-select" id="count-select" required>
                 <option value="" selected disable>Image Count</option>
@@ -71,6 +74,7 @@
               </select>
             </div>
 
+            <!-- Aspect ratio choice -->
             <div class="select-wrapper">
               <select class="custom-select" id="ratio-select" required>
                 <option value="" selected disabled>Aspect Ratio</option>
@@ -80,18 +84,20 @@
               </select>
             </div>
 
+            <!-- Generate image button -->
             <button type="submit" class="generate-btn">
               <i class="fa-solid fa-wand-sparkles"></i>
               Generate
             </button>
           </div>
 
-          <!-- Result Gallery Grid -->
+          <!-- Result gallery grid -->
           <div class="gallery-grid"></div>
         </form>
       </div>
     </div>
 
+    <!-- Use JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
