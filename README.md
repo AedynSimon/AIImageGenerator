@@ -4,38 +4,38 @@ An **AI-powered image generator** that allows users to create stunning AI-genera
 
 ---
 
-## 🚀 Features
+## Features
 
-✅ **Dark/Light Mode Toggle** – Automatically detects system theme or allows manual switching.  
-✅ **AI Model Selection** – Supports multiple AI models including **Stable Diffusion**, **Openjourney**, and **FLUX.1**.  
-✅ **Customizable Image Output** – Users can select **aspect ratios** and **image counts**.  
-✅ **Random Prompt Generator** – Provides creative suggestions for inspiration.  
-✅ **Downloadable Images** – Easily save AI-generated images with a single click.  
-✅ **Smooth UI & Responsive Design** – Works well on both desktop and mobile.
-
----
-
-## 📂 Project Structure
-
-```
-📂 AI-Image-Generator
-│── 📜 index.html        # Main HTML structure
-│── 📜 style.css         # Styling and dark/light theme
-│── 📜 script.js         # JavaScript logic for API calls and UI
-└── 📜 README.md         # Project documentation
-```
+**Dark/Light Mode Toggle** – Automatically detects system theme or allows manual switching.  
+**AI Model Selection** – Supports multiple AI models including **Stable Diffusion**, **Openjourney**, and **FLUX.1**.  
+**Customizable Image Output** – Users can select **aspect ratios** and **image counts**.  
+**Random Prompt Generator** – Provides creative suggestions for inspiration.  
+**Downloadable Images** – Easily save AI-generated images with a single click.  
+**Smooth UI & Responsive Design** – Works well on both desktop and mobile.
 
 ---
 
-## 🛠 Installation & Setup
+## Project Structure
 
-### **1️⃣ Clone the Repository**
+```
+AI-Image-Generator
+│── index.html        # Main HTML structure
+│── style.css         # Styling and dark/light theme
+│── script.js         # JavaScript logic for API calls and UI
+└── README.md         # Project documentation
+```
+
+---
+
+## Installation & Setup
+
+### **1. Clone the Repository**
 ```sh
 git clone https://github.com/yourusername/AI-Image-Generator.git
 cd AI-Image-Generator
 ```
 
-### **2️⃣ Get a Hugging Face API Key**
+### **2. Get a Hugging Face API Key**
 To use this project, you need a **free API key** from Hugging Face:
 
 1. Go to [Hugging Face](https://huggingface.co/join) and create a free account.
@@ -47,9 +47,9 @@ To use this project, you need a **free API key** from Hugging Face:
 const API_KEY = "your_hugging_face_api_key_here";
 ```
 
-⚠️ **Do NOT expose your API key publicly!** Keep it private.
+**Do NOT expose your API key publicly!** Keep it private.
 
-### **3️⃣ Run the Project**
+### **3. Run the Project**
 Simply open `index.html` in your **browser**:
 
 ```sh
@@ -62,14 +62,14 @@ open index.html
 
 Alternatively, use **Live Server** in VS Code for automatic reloads.
 
-### **4️⃣ Generate AI Images!**
+### **4. Generate AI Images!**
 - Enter a detailed text prompt.
 - Choose a model, aspect ratio, and number of images.
 - Click **Generate** and watch the magic happen!
 
 ---
 
-## 📸 Supported AI Models
+## Supported AI Models
 
 | Model Name | Description |
 |------------|-------------|
@@ -81,7 +81,7 @@ Alternatively, use **Live Server** in VS Code for automatic reloads.
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 1. **API Not Working?**
    - Ensure you have a **valid Hugging Face API Key**.
@@ -96,21 +96,21 @@ Alternatively, use **Live Server** in VS Code for automatic reloads.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 Feel free to contribute by submitting a **pull request**! Open an issue if you encounter any bugs or have feature suggestions.
 
 ---
 
-## 📜 License
+## License
 This project is **open-source** and available under the [MIT License](LICENSE).
 
 ---
 
-## 🌟 Acknowledgments
+## Acknowledgments
 - **Hugging Face** for their amazing AI models.
 - **FontAwesome** for icons.
 - **Google Fonts** for typography.
 
 ---
 
-🔥 Enjoy generating AI-powered images! Happy coding! 🚀
+Enjoy generating AI-powered images! Happy coding!
