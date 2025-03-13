@@ -7,7 +7,7 @@ const modelSelect = document.getElementById("model-select");
 const countSelect = document.getElementById("count-select");
 const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
-const API_KEY = ""; // Hugging Face API key DELETE WHEN ADDING/COMMITING/PUSHING TO GITHUB
+const API_KEY = ""; // Hugging Face API key
 
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
