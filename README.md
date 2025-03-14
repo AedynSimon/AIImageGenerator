@@ -101,11 +101,6 @@ Feel free to contribute by submitting a **pull request**! Open an issue if you e
 
 ---
 
-## License
-This project is **open-source** and available under the [MIT License](LICENSE).
-
----
-
 ## Acknowledgments
 - **Hugging Face** for their amazing AI models.
 - **FontAwesome** for icons.
